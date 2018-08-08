@@ -1,0 +1,49 @@
+body,div,ul,li{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+    font-size: 14px;
+
+}
+ul,li{
+    list-style: none;
+}
+
+#tab {
+    margin: 10px auto 0;
+    width: 500px;
+}
+
+#tab ul {
+   position: relative;
+    top: 2px;
+    z-index: 10;
+}
+
+#tab ul li{
+    float:  left;
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#tab ul li.select{
+    background: #67b168;
+}
+
+#tab div {
+    display:none;
+    clear: both; /*清除浮动*/
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#tab div.select {
+    display: block;
+}

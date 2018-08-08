@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9x9乘法表</title>
+    <style type="text/css">
+        body,div,ul,li,span{
+            margin: 0;
+            padding: 0;
+            font-family: "Arial Black";
+            font-size: 16px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #tab {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -450px;
+            margin-top: -135px;
+            width: 900px;
+            height: 270px;
+            border: 1px solid darkred;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body id="tab">
+   <script>
+       var  otab = document.getElementById("tab")
+       var  str="";
+        str+="<ul>";
+       for (var i= 1;i<=9;i++){
+             str+="<li>";
+             for (var j = 1;j<=i;j++){
+                 str+="<span>";
+                    str+=""+j+" * "+i+" = "+(j*i)+"       ";
+                 str+="</span>";
+             }
+             str+="</li>";
+       }
+        str+="</ul>";
+       otab.innerHTML=str;
+       // otab.innerHTML="<a href='http://www.zhufengpeixun.com'>珠峰培训视频平台</a>"
+   </script>
+</body>
+</html>

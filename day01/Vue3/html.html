@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if  v-for v-show</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <div v-show="show">hello world</div>
+
+        <!--v-if 会直接去掉者行代码  来达到 隐藏功能  所以适合 一次性-->
+        <!--v-show 则是通过  style 的样式  style = "display: none"  适合 多次的隐藏 出现-->
+        <button @click="handleClick">toggle</button>
+
+        <ul>
+            <li v-for="(item, index) of list" :key="index">{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue ({
+            el:"#root",
+            data: {
+                show: true,
+                list: [1,2,3]
+            },
+            methods: {
+
+                handleClick: function () {
+                    this.show = !this.show
+                }
+            }
+
+
+        })
+
+    </script>
+</body>
+</html>

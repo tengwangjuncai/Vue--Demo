@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定和双向数据绑定</title>
+    <script src="./vue.js"></script>
+    <!--//放在head  里引入可以防止抖屏-->
+</head>
+<body>
+    <div id = "root">
+     <!--莫版内容 是指在挂载点 内部的内容-->
+          <!--<h1 v-html="content"></h1>-->
+        <!--<div v-on:click="handleClick">{{msg}}</div>-->
+
+        <!--v-on 可以简写成 @-->
+        <div :title="title">hello world</div>
+
+
+        <!--<input :value="des"/> -->
+        <!--:value 数据单项绑定 只会改变  input 中的值-->
+
+        <input v-model="des"/>
+        <!--数据双向绑定，input 中的值改变的时候   des 的值也在改变-->
+
+        <div>{{des}}</div>
+        <!--//v-bind:  可以简写成  ：-->
+
+    </div>
+    <!--vue 的实例挂载点-->
+     <script>
+         new Vue({//vue 的实例
+
+             // el 用来绑定 上面的 root
+             el: "#root",
+             //模板
+             //template:'<h1 v-text>hello {{number}} </h1>',
+             //定义好数据上面可以直接引用
+             data: {
+                 msg: "hello",
+                 number: 123,
+                 content:"<h1>hello</h1>",
+                 title: "this is hello world",
+                 des: "this is content"
+             },
+             methods: {
+                 handleClick: function () {
+
+                     if (this.msg == "hello")
+                     {
+                         this.msg = "world"}else {
+                         this.msg = "hello"
+                     }
+
+
+
+                 }
+             }
+
+
+         })
+
+     </script>
+</body>
+</html>
